@@ -1,0 +1,43 @@
+{
+  "name": "vibecanvas",
+  "version": "0.1.0",
+  "description": "Ambient music visualization with Spotify integration",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "axios": "^1.4.0",
+    "dotenv": "^16.0.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.0",
+    "jest": "^29.5.0",
+    "supertest": "^6.3.0",
+    "@jest/globals": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "server/**/*.js",
+      "client/**/*.js",
+      "!server/index.js",
+      "!**/node_modules/**"
+    ],
+    "testMatch": [
+      "**/tests/**/*.test.js",
+      "**/__tests__/**/*.js"
+    ],
+    "setupFilesAfterEnv": ["<rootDir>/tests/setup.js"]
+  },
+  "keywords": ["spotify", "music", "visualization", "oauth"],
+  "author": "",
+  "license": "MIT"
+}

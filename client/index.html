@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeCanvas - Spotify Music Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 VibeCanvas</h1>
+            <p class="subtitle">Ambient Music Visualization</p>
+        </header>
+
+        <main>
+            <!-- Authentication Section -->
+            <div id="auth-section" class="section hidden">
+                <div class="auth-card">
+                    <h2>Connect to Spotify</h2>
+                    <p>Authenticate with Spotify to start visualizing your music</p>
+                    <button id="login-btn" class="btn btn-primary">
+                        🎵 Login with Spotify
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading Section -->
+            <div id="loading-section" class="section hidden">
+                <div class="loading-card">
+                    <div class="spinner"></div>
+                    <p>Loading your music...</p>
+                </div>
+            </div>
+
+            <!-- Music Display Section -->
+            <div id="music-section" class="section hidden">
+                <div class="music-card">
+                    <div class="album-art-container">
+                        <img id="album-art" src="" alt="Album Art" class="album-art">
+                        <div class="play-indicator">
+                            <div id="play-status" class="play-icon">⏸️</div>
+                        </div>
+                    </div>
+
+                    <div class="track-info">
+                        <h2 id="track-name">No track playing</h2>
+                        <p id="artist-name">Unknown Artist</p>
+                        <p id="album-name">Unknown Album</p>
+
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div id="progress-fill" class="progress-fill"></div>
+                            </div>
+                            <div class="time-info">
+                                <span id="current-time">0:00</span>
+                                <span id="total-time">0:00</span>
+                            </div>
+                        </div>
+
+                        <div class="device-info">
+                            <span id="device-name">Unknown Device</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div class="controls">
+                    <button id="refresh-btn" class="btn btn-secondary">
+                        🔄 Refresh
+                    </button>
+                    <button id="logout-btn" class="btn btn-outline">
+                        🚪 Logout
+                    </button>
+                </div>
+            </div>
+
+            <!-- Error Section -->
+            <div id="error-section" class="section hidden">
+                <div class="error-card">
+                    <h2>⚠️ Something went wrong</h2>
+                    <p id="error-message">Unable to fetch track information</p>
+                    <button id="retry-btn" class="btn btn-primary">
+                        🔄 Try Again
+                    </button>
+                </div>
+            </div>
+
+            <!-- No Music Section -->
+            <div id="no-music-section" class="section hidden">
+                <div class="no-music-card">
+                    <h2>🎵 No Music Playing</h2>
+                    <p>Start playing music on Spotify to see it here!</p>
+                    <p class="hint">Make sure Spotify is open and playing music on any of your devices.</p>
+                    <button id="check-again-btn" class="btn btn-primary">
+                        🔍 Check Again
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by Spotify Web API</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
